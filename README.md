@@ -1,6 +1,6 @@
 
 # 🌿 Garden Defense: Praga no Jardim
-
+**Desenvolvedora:** Stephany Aliyah
 Um jogo de defesa e estratégia onde o jogador protege um jardim mágico contra hordas de pragas invasoras.
 
 A protagonista é uma **boneca guardiã**, vestindo um **vestido verde e chapéu de palha**, responsável por cuidar do jardim e impedir que os bichos destruam as flores.
