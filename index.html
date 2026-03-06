@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Garden Defense - Praga no Jardim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <canvas id="gesture-canvas"></canvas>
+
+        <!-- Decorative Flowers Layer -->
+        <div id="decorative-flowers"></div>
+
+        <!-- UI Layer -->
+        <div id="ui-layer">
+            <div id="top-left-stats" class="compact-stat glass">
+                <div id="score"><span>PONTOS:</span> 0</div>
+            </div>
+
+            <div id="top-center-stats">
+                <div id="current-level" class="pill">Nível 1</div>
+                <div class="progress-container glass">
+                    <div id="level-progress"></div>
+                </div>
+            </div>
+
+            <div id="top-right-stats" class="compact-stat glass">
+                <div class="health-area">
+                    <div class="health-bar-container">
+                        <div id="health-bar"></div>
+                    </div>
+                </div>
+                <div class="menu-btns">
+                    <button id="pause-btn" class="icon-btn" title="Pausar">⏸️</button>
+                    <button id="exit-btn" class="icon-btn" title="Sair do Jogo">🚪</button>
+                </div>
+            </div>
+
+            <div id="message-display" class="message-pill">Mova com WASD e clique nas pragas para proteger a Boneca!
+            </div>
+        </div>
+
+        <!-- Screens -->
+        <div id="start-screen" class="overlay">
+            <div class="content glass">
+                <div class="pixel-art-title">PIXEL GARDEN</div>
+                <h1 class="pixel-text">PRAGA NO JARDIM</h1>
+                <p class="pixel-subtext">Proteja as flores e complete as 10 fases da jornada!</p>
+                <div class="start-actions">
+                    <button id="start-btn" class="primary-btn pixel-btn">INICIAR JORNADA</button>
+                    <button class="secondary-btn pixel-btn" onclick="location.reload()">SAIR</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="level-map-screen" class="overlay hidden">
+            <div class="content glass wide">
+                <h2>MAPA DO JARDIM</h2>
+                <p>Selecione seu próximo desafio:</p>
+                <div id="level-grid" class="level-grid">
+                    <!-- Níveis 1 a 10 gerados via JS -->
+                </div>
+            </div>
+        </div>
+
+        <div id="tutorial-screen" class="overlay hidden">
+            <div class="content glass wide">
+                <h2>DEFESA RÁPIDA!</h2>
+                <p>As pragas estão atacando! Clique nos bichos para atirar e eliminá-los antes que alcancem a
+                    Jardineira.</p>
+                <div class="tutorial-grid">
+                    <div class="tut-item">
+                        <div class="symbol-box">⌨️</div><label>WASD / SETAS PARA MOVER</label>
+                    </div>
+                    <div class="tut-item">
+                        <div class="symbol-box">🖱️</div><label>CLIQUE PARA ATIRAR</label>
+                    </div>
+                </div>
+                <button id="tut-next-btn" class="primary-btn">VAMOS LÁ!</button>
+            </div>
+        </div>
+
+        <div id="pause-screen" class="overlay hidden">
+            <div class="content glass">
+                <h1>PAUSADO</h1>
+                <div class="pause-actions">
+                    <button id="resume-btn" class="primary-btn">CONTINUAR</button>
+                    <button id="restart-from-pause-btn" class="secondary-btn">REINICIAR</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="level-complete" class="overlay hidden">
+            <div class="content glass">
+                <h1 class="victory-text">FASE CONCLUÍDA!</h1>
+                <div id="medal-container"></div>
+                <p>O jardim está florescendo!</p>
+                <button id="show-map-btn" class="primary-btn">VOLTAR AO MAPA</button>
+            </div>
+        </div>
+
+        <div id="game-clear" class="overlay hidden">
+            <div class="content glass">
+                <h1 class="victory-text">🏆 JARDIM SALVO! 🏆</h1>
+                <div class="medal">💎</div>
+                <p>Parabéns! Você completou todos os 10 níveis e salvou o jardim sagrado!</p>
+                <button id="restart-all-btn" class="primary-btn">JOGAR NOVAMENTE</button>
+            </div>
+        </div>
+
+        <div id="game-over" class="overlay hidden">
+            <div class="content glass">
+                <h1>FIM DE JOGO</h1>
+                <div id="final-score">PONTUAÇÃO: 0</div>
+                <button id="restart-btn" class="primary-btn">RECOMENTAR NÍVEL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="gestures.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
